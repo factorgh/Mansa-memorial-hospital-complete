@@ -1,0 +1,73 @@
+export const patients = [
+  {
+    id: 1,
+
+    name: "Abdul Aziz",
+    period: "0:0:07",
+    gender: "male",
+    purpose: "Consulting",
+  },
+  {
+    id: 2,
+    name: "Richard Okeyere",
+    period: "0:0:47",
+    gender: "male",
+    purpose: "Wound dressing",
+  },
+  {
+    id: 3,
+    name: "Michael wills",
+    period: "0:7:07",
+    gender: "male",
+    purpose: "Check up",
+  },
+  {
+    id: 4,
+    name: "Michael Okyere",
+    period: "0:7:00",
+    gender: "male",
+    purpose: "Consulting",
+  },
+  {
+    id: 5,
+    name: "William Otoo",
+    period: "0:45:07",
+    gender: "male",
+    purpose: "Wound dressing",
+  },
+  {
+    id: 6,
+    name: "Wills hall",
+    period: "0:23:07",
+    gender: "male",
+    purpose: "Wound dressing",
+  },
+  {
+    id: 7,
+    name: "sadiq Aziz",
+    period: "0:0:07",
+    gender: "male",
+    purpose: "Consulting",
+  },
+  {
+    id: 8,
+    name: "Aziz Mumuni",
+    period: "0:0:07",
+    gender: "male",
+    purpose: "Consulting",
+  },
+  {
+    id: 9,
+    name: "Francis darko",
+    period: "0:0:37",
+    gender: "male",
+    purpose: "Wound dressing",
+  },
+  {
+    id: 10,
+    name: "Michel obama",
+    period: "0:57:07",
+    gender: "male",
+    purpose: "Consulting",
+  },
+];
