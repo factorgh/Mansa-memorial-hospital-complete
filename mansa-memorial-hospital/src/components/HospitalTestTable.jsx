@@ -6,7 +6,7 @@ import AlertDialog from "./AlertDialogSlide";
 import { useNavigate } from "react-router-dom";
 import { useDelLabTest } from "../hooks/useDelLabTest";
 
-function TableContent({ title, patients, expand }) {
+function TableContent({ title, tests, expand }) {
   const navigate = useNavigate();
   // handle del and handle edit
   const handleDisplay = () => {
@@ -35,27 +35,25 @@ function TableContent({ title, patients, expand }) {
             <tr className="w-full">
               <td className="p-3 text-[#004F9E]">#</td>
               <td className="p-3 text-[#004F9E]">Name</td>
-              <td className="p-3 text-[#004F9E]">Role</td>
+              <td className="p-3 text-[#004F9E]">Duration</td>
 
               <td className="p-3 text-[#004F9E]">Actions</td>
             </tr>
           </thead>
           <tbody>
-            {patients?.map((patient, index) => (
-              <tr key={patient._id} className="p-3  border-b border-gray-200">
+            {tests?.map((test, index) => (
+              <tr key={test._id} className="p-3  border-b border-gray-200">
                 <td className="p-3 ">{index + 1}</td>
-                <td className="p-3 flex gap-2">
-                  {patient.firstName} {patient.lastName}
-                </td>
+                <td className="p-3 flex gap-2">{test.name}</td>
 
-                <td className="p-3 text-[#004F9E]">{patient.role}</td>
+                <td className="p-3 text-[#004F9E]">{test.time}</td>
                 <td className="p-3 ">
                   <span className="flex gap-2">
                     <FaEdit
                       className="hover:cursor-pointer"
-                      onClick={() => navigate(`/edit/user/${patient._id}`)}
+                      onClick={() => navigate(`/edit/user/${test._id}`)}
                     />
-                    <AlertDialog onClick={() => handleDel(patient._id)} />
+                    <AlertDialog onClick={() => handleDel(test._id)} />
                   </span>
                 </td>
               </tr>

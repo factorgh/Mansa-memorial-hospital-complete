@@ -227,3 +227,66 @@ export const updateLabStatus = async (id, data) => {
   if (!res.ok) throw new Error(res.message);
   return res.json();
 };
+
+// Hospital services
+
+export const createHospitalTest = async (data) => {
+  const res = await fetch(`${BASE_URL}/api/v1/hospital-test/`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!res.ok) throw new Error(res.message);
+  return res.json();
+};
+
+export const getAllHospitalTest = async () => {
+  const res = await fetch(`${BASE_URL}/api/v1/hospital-test`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!res.ok) throw new Error(res.message);
+  return res.json();
+};
+export const getHospitalTest = async (testId) => {
+  const res = await fetch(`${BASE_URL}/api/v1/hospital-test/${testId}`, {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!res.ok) throw new Error(res.message);
+  return res.json();
+};
+export const delHospitalTest = async (id) => {
+  console.log(id);
+  const res = await fetch(`${BASE_URL}/api/v1/hospital-test/${id}`, {
+    method: "DELETE",
+    headers: {
+      "Content-Type": "application/json",
+    },
+  });
+
+  if (!res.ok) throw new Error(res.message);
+  return res.json();
+};
+
+export const updateHospitalTest = async (id, data) => {
+  const res = await fetch(`${BASE_URL}/api/v1/hospital-test/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+  if (!res.ok) throw new Error(res.message);
+  return res.json();
+};

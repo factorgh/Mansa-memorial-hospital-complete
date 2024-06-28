@@ -1,6 +1,6 @@
 import { FaSearch } from "react-icons/fa";
 import { FaSortAlphaUp } from "react-icons/fa";
-import Profile from "../img/profile.png";
+import Profile from "../img/profile2.webp";
 import "react-date-range/dist/styles.css"; // main style file
 import "react-date-range/dist/theme/default.css";
 
@@ -42,7 +42,11 @@ const Header = () => {
           <div className="border border-s-slate-700 border-slate-50 p-2 flex gap-10 ">
             <div className="flex gap-2 items-center justify-center">
               <div className="w-8 h-8 rounded-full">
-                <img src={Profile} alt="" className="w-full object-contain" />
+                <img
+                  src={Profile}
+                  alt=""
+                  className="w-full rounded-full object-contain"
+                />
               </div>
               <div className="flex flex-col  items-center justify-normal">
                 <h3 className="text-sm ">{user.firstName}</h3>

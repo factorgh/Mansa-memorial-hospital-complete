@@ -8,8 +8,10 @@ import {
 } from "recharts";
 
 const data = [
-  { label: "Consulting", value: 400, color: "#004F9E" },
+  { label: "Consulting", value: 400, color: "#747986" },
   { label: "Wound dressing", value: 300, color: "#F78509" },
+  { label: " Outreach", value: 300, color: "#C33333" },
+  { label: "Anti natal", value: 300, color: "#1D1B1B" },
 ];
 
 const Pie2 = () => {
@@ -43,7 +45,7 @@ const Pie2 = () => {
           layout="vertical"
           iconSize={10}
           iconType="circle"
-          fontSize="5px"
+          fontSize="3px"
         />
       </PieChart>
     </ResponsiveContainer>

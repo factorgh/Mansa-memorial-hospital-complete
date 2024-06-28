@@ -12,9 +12,7 @@ import { MdDownload, MdPersonAddAlt } from "react-icons/md";
 // import AlertDialogSlide from "../components/FormDialog";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
-
 import FormDialog from "../components/FormDialog";
-// import BarChartConfig from "../components/BarChartConfig";
 import { useEffect, useState } from "react";
 import { getAllPatient } from "../services/api_db";
 import { getAllTest } from "../services/api_db";
@@ -48,16 +46,6 @@ const Dashboard = () => {
 
   const getUser = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
-
-  // const handleCompleteTest = (patientId) => {
-  //   const updatedPatients = patientsAll?.map((patient) => {
-  //     if (patient.id === patientId) {
-  //       return { ...patient, completedTime: new Date() };
-  //     }
-  //     return patient;
-  //   });
-  //  return upda
-  // };
 
   const isGeneralRole =
     getUser?.role === "admin" || getUser?.role === "manager";
@@ -180,7 +168,6 @@ const Dashboard = () => {
               elapsedTime={0}
               patients={filteredPatientsData}
               title="Outpatient department"
-              expand="see all"
               download={
                 <MdDownload onClick={handleDownload} className="text-2xl" />
               }
@@ -188,7 +175,6 @@ const Dashboard = () => {
             <TableContent
               patients={filteredLabData}
               title="Awaiting lab results"
-              expand="see all"
               download={
                 <MdDownload
                   onClick={handleDownloadLabTest}

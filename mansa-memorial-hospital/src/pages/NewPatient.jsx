@@ -68,6 +68,8 @@ const NewPatient = () => {
                 <option value="other">Choose purpose of patient visit</option>
                 <option value="wound-dressing">Wound dressing</option>
                 <option value="consulting">Consulting</option>
+                <option value="outreach">Outreach</option>
+                <option value="anti-natal">Anti Natal</option>
               </select>
             </Form>
             <Form title="File Number">

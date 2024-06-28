@@ -3,6 +3,7 @@
 import { FaEdit } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import AlertDialog from "./AlertDialogSlide";
+import CountdownTimer from "./CountdownTimer";
 function TableContent({ title, patients, expand, download }) {
   const navigate = useNavigate();
   // handle del and handle edit
@@ -48,7 +49,8 @@ function TableContent({ title, patients, expand, download }) {
             <tr className="w-full">
               <td className="p-3 text-[#004F9E]">#</td>
               <td className="p-3 text-[#004F9E]">Name</td>
-              <td className="p-3 ">status</td>
+
+              <td className="p-3   text-[#004F9E]">CoutDown Time</td>
               {isGeneralRole && <td className="p-3 text-[#004F9E]">Actions</td>}
             </tr>
           </thead>
@@ -57,9 +59,9 @@ function TableContent({ title, patients, expand, download }) {
               <tr key={patient._id} className="p-3  border-b border-gray-200">
                 <td className="p-3 ">{index + 1}</td>
                 <td className="p-3 ">{patient.patient}</td>
-
-                <td>{patient.status}</td>
-
+                <td>
+                  <CountdownTimer />
+                </td>
                 {isGeneralRole && (
                   <td className="p-3 ">
                     <span className="flex gap-2">

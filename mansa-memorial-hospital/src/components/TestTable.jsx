@@ -6,12 +6,9 @@ import AlertDialog from "./AlertDialogSlide";
 import { useNavigate } from "react-router-dom";
 import { useDelLabTest } from "../hooks/useDelLabTest";
 
-function TableContent({ title, patients, expand }) {
+function TestTable({ title, tests }) {
   const navigate = useNavigate();
   // handle del and handle edit
-  const handleDisplay = () => {
-    window.location.href = "display";
-  };
 
   const { delLabTestApi } = useDelLabTest();
   const handleDel = (id) => {
@@ -22,12 +19,9 @@ function TableContent({ title, patients, expand }) {
     <div className="bg-white pt-3 pb-4 mt-5 rounded-md flex-1">
       <strong className="text-gray-700 font-medium flex justify-between p-2">
         <h3 className="px-3 font-light">{title}</h3>{" "}
-        <h3
-          className="px-3 text-[#004F9E] font-light hover:cursor-pointer "
-          onClick={handleDisplay}
-        >
-          {expand}
-        </h3>
+        <button className="bg-[#004F9E] p-2 shadow-sm  text-white w-[200px] rounded-md">
+          Add New Account
+        </button>
       </strong>
       <div className=" rounded-sm mt-3">
         <table className="w-full text-gray-700 overflow-scroll">
@@ -35,27 +29,25 @@ function TableContent({ title, patients, expand }) {
             <tr className="w-full">
               <td className="p-3 text-[#004F9E]">#</td>
               <td className="p-3 text-[#004F9E]">Name</td>
-              <td className="p-3 text-[#004F9E]">Role</td>
+              <td className="p-3 text-[#004F9E]">Time</td>
 
               <td className="p-3 text-[#004F9E]">Actions</td>
             </tr>
           </thead>
           <tbody>
-            {patients?.map((patient, index) => (
-              <tr key={patient._id} className="p-3  border-b border-gray-200">
+            {tests?.map((test, index) => (
+              <tr key={test._id} className="p-3  border-b border-gray-200">
                 <td className="p-3 ">{index + 1}</td>
-                <td className="p-3 flex gap-2">
-                  {patient.firstName} {patient.lastName}
-                </td>
+                <td className="p-3 flex gap-2">{test.name}</td>
 
-                <td className="p-3 text-[#004F9E]">{patient.role}</td>
+                <td className="p-3 text-[#004F9E]">{test.time}</td>
                 <td className="p-3 ">
                   <span className="flex gap-2">
                     <FaEdit
                       className="hover:cursor-pointer"
-                      onClick={() => navigate(`/edit/user/${patient._id}`)}
+                      onClick={() => navigate(`/edit/user/${test._id}`)}
                     />
-                    <AlertDialog onClick={() => handleDel(patient._id)} />
+                    <AlertDialog onClick={() => handleDel(test._id)} />
                   </span>
                 </td>
               </tr>
@@ -67,4 +59,4 @@ function TableContent({ title, patients, expand }) {
   );
 }
 
-export default TableContent;
+export default TestTable;

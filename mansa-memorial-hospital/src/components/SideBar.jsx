@@ -1,6 +1,6 @@
 import { useLocation, Link } from "react-router-dom";
 import { FaThLarge } from "react-icons/fa";
-import { TbWheelchair } from "react-icons/tb";
+
 import { MdGroups } from "react-icons/md";
 import { GrTest } from "react-icons/gr";
 import { motion } from "framer-motion";
@@ -33,7 +33,6 @@ const SideBar = () => {
   const isGeneralRole =
     getUser?.role === "admin" || getUser?.role === "manager";
 
-  const isLab = getUser?.role === "lab-tech";
   ///Split pahtname by creteria to get the current location
   const splittedPath = pathname.split("/");
 
@@ -64,7 +63,7 @@ const SideBar = () => {
             </motion.li>
           </Link>
 
-          {!isLab && (
+          {/* {!isLab && (
             <Link to="/patients">
               <motion.li
                 whileTap={{ scale: 0.6 }}
@@ -84,7 +83,7 @@ const SideBar = () => {
                 <h3>Patients</h3>
               </motion.li>
             </Link>
-          )}
+          )} */}
           {isGeneralRole && (
             <Link to="/employees">
               <motion.li
@@ -169,11 +168,11 @@ const SideBar = () => {
           </motion.li>
         </Link> */}
         {isAdmin && !isManager && (
-          <Link to="/account">
+          <Link to="/display">
             <motion.li
               whileTap={{ scale: 0.6 }}
               className={
-                splittedPath[1] === "account"
+                splittedPath[1] === "display"
                   ? "w-full bg-[#004F9E] px-16 py-4 text-white flex  items-center gap-2 "
                   : "w-full flex items-center  px-16 py-4 text-black p-5 gap-2 hover:bg-[#c1d0de]  "
               }
@@ -184,7 +183,7 @@ const SideBar = () => {
                 }
               />
 
-              <h3>Account </h3>
+              <h3>Display </h3>
             </motion.li>
           </Link>
         )}

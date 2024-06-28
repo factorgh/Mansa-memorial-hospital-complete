@@ -12,7 +12,7 @@ const chartConfig = {
   series: [
     {
       name: "minutes",
-      data: [50, 40, 30, 20, 50, 30, 20, 30, 50],
+      data: [50, 30, 40],
     },
   ],
   options: {
@@ -49,7 +49,7 @@ const chartConfig = {
           fontWeight: 400,
         },
       },
-      categories: ["1", "2", "3", "4", "5", "6", "7", "8", "9"],
+      categories: ["FCP", "SUGAR", "PROTEIN"],
     },
     yaxis: {
       labels: {
@@ -95,8 +95,8 @@ export default function ChartItem() {
       >
         <div className="p-2 flex justify-center items-center gap-2">
           <div className="w-2 h-2 bg-[#F78509] rounded-full"></div>
-          <h3 className="text-[12px] font-semibold">
-            Patients wait time for the lab test
+          <h3 className="text-[10px] font-semibold">
+            Lab Test patients visit statistics
           </h3>
         </div>
         <div className="flex gap-2 justify-between items-center  p-3 mx-auto">

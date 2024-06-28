@@ -24,7 +24,7 @@ const chartConfig = {
   series: [
     {
       name: "minutes",
-      data: ["20", "40", "60", "40"],
+      data: ["20", "40", "50", "40"],
     },
   ],
   options: {
@@ -61,7 +61,7 @@ const chartConfig = {
           fontWeight: 400,
         },
       },
-      categories: patients.map((_, index) => `Patient ${index + 1}`),
+      categories: ["WOUND DRESSING", "CONSULTING", "ANTI NATAL", "OUTREACH"],
     },
     yaxis: {
       labels: {
@@ -107,8 +107,8 @@ export default function ChartItem() {
       >
         <div className="p-2 flex justify-center items-center gap-2">
           <div className="w-2 h-2 bg-[#004F9E] rounded-full"></div>
-          <h3 className="text-[12px] font-semibold">
-            Patients wait time for the lab test
+          <h3 className="text-[10px] font-semibold">
+            Outpatients Patients visit statistics
           </h3>
         </div>
         <div className="flex gap-2 justify-between items-center  p-3 mx-auto">

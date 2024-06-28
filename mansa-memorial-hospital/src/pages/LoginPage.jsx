@@ -8,9 +8,12 @@ import Shock from "../img/shock.png";
 import { useForm } from "react-hook-form";
 import { useLogin } from "../hooks/useLogin";
 import CircularIndeterminate from "../components/CircularIndeterminate";
+import { FaRegEye } from "react-icons/fa";
+import { FaRegEyeSlash } from "react-icons/fa";
+import { useState } from "react";
 
 const LoginPage = () => {
-  // const [toggleVisibilty, setToggleVisibilty] = useState(true);
+  const [toggleVisibilty, setToggleVisibilty] = useState(true);
 
   const {
     handleSubmit,
@@ -27,16 +30,10 @@ const LoginPage = () => {
       },
     });
   };
-  //   console.log(data);
-  //   login(
-  //     { data },
-  //     {
-  //       onSettled: () => {
-  //         reset();
-  //       },
-  //     }
-  //   );
-  // };
+  //Hanlde visiblity
+  const handleVisibility = () => {
+    setToggleVisibilty((prevState) => !prevState);
+  };
 
   return (
     <div className="flex w-screen h-screen bg-gradient-to-r from-[#FFF] to-[#d8e4f1]">
@@ -74,11 +71,16 @@ const LoginPage = () => {
                 className="w-full flex justify-between items-center border border-slate-700 rounded-md bg-[#d8e4f1]  mb-5 p-3 focus:border focus:border-slate-700"
               >
                 <input
-                  type="password"
+                  type={toggleVisibilty ? "password" : "text"}
                   placeholder="Enter a password"
-                  className=" placeholder:text-slate-500 outline-none w-full  bg-[#d8e4f1] "
+                  className=" outline-none w-full   bg-[#d8e4f1] "
                   {...register("password", { required: true })}
                 />
+                {toggleVisibilty ? (
+                  <FaRegEye onClick={handleVisibility} />
+                ) : (
+                  <FaRegEyeSlash onClick={handleVisibility} />
+                )}
               </label>
               {errors.password && errors.password.type === "required" && (
                 <span className="text-orange-500 p-2">

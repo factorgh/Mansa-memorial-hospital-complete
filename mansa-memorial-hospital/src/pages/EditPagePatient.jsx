@@ -21,6 +21,7 @@ const EditPage = () => {
     [reset, patient]
   );
   const onSubmit = (data) => {
+    console.log(data);
     updatePatient(data);
   };
   return (
@@ -38,6 +39,7 @@ const EditPage = () => {
           <div className="flex gap-4">
             <Form title="First name ">
               <input
+                disabled
                 type="text"
                 {...register("firstName", { required: true })}
                 placeholder="Enter first name"
@@ -46,6 +48,7 @@ const EditPage = () => {
             </Form>
             <Form title="Last name" placeholder="Enter last Name">
               <input
+                disabled
                 type="text"
                 {...register("lastName", { required: true })}
                 placeholder="Enter last name"
@@ -62,10 +65,13 @@ const EditPage = () => {
                 <option value="other">Choose purpose of patient visit</option>
                 <option value="wound-dressing">Wound dressing</option>
                 <option value="consulting">Consulting</option>
+                <option value="outreach">Outreach</option>
+                <option value="anti-natal">Anti Natal</option>
               </select>
             </Form>
             <Form title="File Number">
               <input
+                disabled
                 {...register("fileNumber", { required: true })}
                 type="text"
                 placeholder="Enter file number"
@@ -76,6 +82,7 @@ const EditPage = () => {
           <div className="flex gap-4 w-[500px] ml-2">
             <Form title="Phone number">
               <input
+                disabled
                 {...register("phoneNumber", { required: true })}
                 type="text"
                 placeholder="Enter a phone number"

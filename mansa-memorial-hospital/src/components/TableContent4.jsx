@@ -14,16 +14,6 @@ function TableContent({ title, patients, expand, download }) {
     navigate("/patient-display");
   };
 
-  // function convertMinutesToTime(minutes) {
-  //   const hours = Math.floor(minutes / 60);
-  //   const remainingMinutes = minutes % 60;
-
-  //   // Pad single-digit minutes with a leading zero
-  //   const paddedMinutes =
-  //     remainingMinutes < 10 ? "0" + remainingMinutes : remainingMinutes;
-
-  //   return hours + ":" + paddedMinutes;
-  // }
   const getUser = JSON.parse(localStorage.getItem("user"));
   const isGeneralRole =
     getUser?.role === "admin" || getUser?.role === "manager";
