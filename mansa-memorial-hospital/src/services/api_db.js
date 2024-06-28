@@ -1,5 +1,5 @@
-// const BASE_URL = "https://mansa-backend-l4k5.onrender.com";
-const BASE_URL = "http://localhost:5000";
+const BASE_URL = "https://mansa-backend-l4k5.onrender.com";
+// const BASE_URL = "http://localhost:5000";
 
 export const createUser = async (data) => {
   const res = await fetch(`${BASE_URL}/api/v1/users`, {

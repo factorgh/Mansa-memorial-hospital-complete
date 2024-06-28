@@ -168,7 +168,7 @@ const SideBar = () => {
           </motion.li>
         </Link> */}
         {isAdmin && !isManager && (
-          <Link to="/display">
+          <Link to="/patient-display">
             <motion.li
               whileTap={{ scale: 0.6 }}
               className={
