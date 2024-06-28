@@ -6,16 +6,16 @@ const DisplayPatients = () => {
   const { patientsAll } = useGetPatients();
 
   return (
-    <div className="w-screen h-screen flex gap-5  p-3 bg-gray-700">
+    <div className="w-screen h-screen flex   p-3 bg-gray-700">
       <TableContent4
         patients={patientsAll}
-        title="Consulting"
+        title="OutPatient Department"
         expand=""
         download={<MdDownload className="text-2xl" />}
       />
       <TableContent4
         patients={patientsAll}
-        title="Wound dressing"
+        title="Lab Patients"
         expand=""
         download={<MdDownload className="text-2xl" />}
       />
