@@ -44,7 +44,7 @@ const chartConfig = {
       labels: {
         style: {
           colors: "#616161",
-          fontSize: "12px",
+          fontSize: "10px",
           fontFamily: "inherit",
           fontWeight: 400,
         },

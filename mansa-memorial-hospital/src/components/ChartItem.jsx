@@ -2,7 +2,6 @@
 import { Card, CardBody, CardHeader } from "@material-tailwind/react";
 import Chart from "react-apexcharts";
 import { MdDragIndicator } from "react-icons/md";
-import { patients } from "../services/data";
 
 // If you're using Next.js please use the dynamic import for react-apexcharts and remove the import from the top for the react-apexcharts
 // import dynamic from "next/dynamic";
@@ -56,21 +55,22 @@ const chartConfig = {
       labels: {
         style: {
           colors: "#616161",
-          fontSize: "12px",
+          fontSize: "8px",
           fontFamily: "inherit",
           fontWeight: 400,
         },
       },
-      categories: ["WOUND DRESSING", "CONSULTING", "ANTI NATAL", "OUTREACH"],
+      categories: ["WOUND DRESS", "CONSULTING", "ANTI NATAL", "OUTREACH"],
     },
     yaxis: {
       labels: {
         style: {
           colors: "#616161",
-          fontSize: "12px",
+          fontSize: "10px",
           fontFamily: "inherit",
           fontWeight: 400,
         },
+        rotate: 0,
       },
     },
     grid: {

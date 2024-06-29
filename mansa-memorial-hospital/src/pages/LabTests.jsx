@@ -5,6 +5,7 @@ import HospitalTestTable from "../components/HospitalTestTable";
 
 const LabTests = () => {
   const { hospitalTest } = useGetAllHospitalTest();
+  console.log(hospitalTest);
   return (
     <>
       {hospitalTest ? (

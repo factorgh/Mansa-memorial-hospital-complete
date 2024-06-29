@@ -87,20 +87,22 @@ const CountdownTimer = ({ initialTime, patientId }) => {
         <span>{timer}</span>
       </div>
 
-      <span className="p-2 flex gap-2">
-        <button
-          className="bg-blue-400 rounded-md p-2 text-sm"
-          onClick={() => addTime(1)}
-        >
-          + 1
-        </button>
-        <button
-          className="bg-blue-400 rounded-md p-2 text-sm"
-          onClick={() => addTime(5)}
-        >
-          + 5
-        </button>
-      </span>
+      {role.role === "admin" && (
+        <span className="p-2 flex gap-2">
+          <button
+            className="bg-blue-400 rounded-md p-2 text-sm"
+            onClick={() => addTime(1)}
+          >
+            + 1
+          </button>
+          <button
+            className="bg-blue-400 rounded-md p-2 text-sm"
+            onClick={() => addTime(5)}
+          >
+            + 5
+          </button>
+        </span>
+      )}
     </div>
   );
 };

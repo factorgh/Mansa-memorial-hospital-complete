@@ -7,10 +7,11 @@ import Shock from "../img/shock.png";
 
 import { useForm } from "react-hook-form";
 import { useLogin } from "../hooks/useLogin";
-import CircularIndeterminate from "../components/CircularIndeterminate";
+
 import { FaRegEye } from "react-icons/fa";
 import { FaRegEyeSlash } from "react-icons/fa";
 import { useState } from "react";
+import { CircularProgress } from "@mui/material";
 
 const LoginPage = () => {
   const [toggleVisibilty, setToggleVisibilty] = useState(true);
@@ -95,7 +96,7 @@ const LoginPage = () => {
                   Login
                 </button>
               ) : (
-                <CircularIndeterminate />
+                <CircularProgress />
               )}
             </form>
           </div>

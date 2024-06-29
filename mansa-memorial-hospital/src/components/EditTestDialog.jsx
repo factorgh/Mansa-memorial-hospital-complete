@@ -9,23 +9,33 @@ import DialogContentText from "@mui/material/DialogContentText";
 import Slide from "@mui/material/Slide";
 import Form from "./Form";
 import { useForm } from "react-hook-form";
-import { useCreateTest } from "../hooks/useCreateTest";
-import { GrTest } from "react-icons/gr";
+import { useGetOneTest } from "../hooks/useGetHospitalTest";
+import { useUpdateTest } from "../hooks/useUpdateHospitalTest";
+
+import { FaEdit } from "react-icons/fa";
 
 const Transition = React.forwardRef(function Transition(props, ref) {
   return <Slide direction="up" ref={ref} {...props} />;
 });
 
-export default function AlertDialogSlide() {
+export default function AlertDialogSlide({ id }) {
   const [open, setOpen] = React.useState(false);
   const { register, handleSubmit, reset } = useForm();
-  const { createTest } = useCreateTest();
+  const { hospitalTest } = useGetOneTest(id);
+  const { updateTest } = useUpdateTest(id);
+
+  React.useEffect(
+    function () {
+      reset(hospitalTest);
+    },
+    [hospitalTest, reset]
+  );
 
   const onSubmit = (data) => {
     console.log(data);
     if (data.name === "" || data.time === 0 || data.description === "") return;
 
-    createTest(data, {
+    updateTest(data, {
       onSettled: () => {
         reset();
       },
@@ -42,9 +52,7 @@ export default function AlertDialogSlide() {
 
   return (
     <React.Fragment>
-      <Button onClick={handleClickOpen} icon={<GrTest />}>
-        New lab tests
-      </Button>
+      <FaEdit className="hover:cursor-pointer" onClick={handleClickOpen} />
 
       <Dialog
         open={open}

@@ -30,8 +30,7 @@ const SideBar = () => {
   const getUser = JSON.parse(localStorage.getItem("user"));
   const isAdmin = getUser?.role === "admin";
   const isManager = getUser?.role === "manager";
-  const isGeneralRole =
-    getUser?.role === "admin" || getUser?.role === "manager";
+  const isGeneralRole = getUser?.role === "admin";
 
   ///Split pahtname by creteria to get the current location
   const splittedPath = pathname.split("/");
@@ -41,7 +40,7 @@ const SideBar = () => {
       <div className="h-[50%] w-full border-b border-slate-300   ">
         <div className="p-8 border-b border-slate-300  ">
           <Link to="/dashboard">
-            <img src={Brand} alt="brand image" className="w-15 h-10 " />
+            <img src={Brand} alt="brand image" className="w-15 h-10" />
           </Link>
         </div>
         <ul className="flex flex-col   w-full justify-center   ">
@@ -168,7 +167,11 @@ const SideBar = () => {
           </motion.li>
         </Link> */}
         {isAdmin && !isManager && (
-          <Link to="/patient-display">
+          <button
+            onClick={() => {
+              window.location.href = "/patient-display";
+            }}
+          >
             <motion.li
               whileTap={{ scale: 0.6 }}
               className={
@@ -185,7 +188,7 @@ const SideBar = () => {
 
               <h3>Display </h3>
             </motion.li>
-          </Link>
+          </button>
         )}
       </ul>
     </StyledSide>

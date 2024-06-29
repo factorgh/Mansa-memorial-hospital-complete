@@ -22,15 +22,14 @@ function TableContent({ title, patients, expand, download }) {
   //   return hours + ":" + paddedMinutes;
   // }
   const getUser = JSON.parse(localStorage.getItem("user"));
-  const isGeneralRole =
-    getUser?.role === "admin" || getUser?.role === "manager";
+  const isGeneralRole = getUser?.role === "admin";
 
   return (
     <div className="bg-white pt-3 pb-4 mt-5 rounded-md flex-1">
       <strong className="text-gray-700 font-medium flex justify-between p-2">
         <h3 className="px-3 font-light">{title}</h3>{" "}
         <div className="flex gap-15">
-          {download && (
+          {isGeneralRole && (
             <h3 className="px-3 text-[#004F9E] font-light hover:cursor-pointer">
               {download}
             </h3>

@@ -9,7 +9,7 @@ export const useCreatePatient = () => {
     mutationFn: (data) => createPatient(data),
     mutationKey: ["create patient"],
     onSuccess: () => {
-      navigate("/patients");
+      navigate("/dashboard");
       toast("Patient added succesfully 😜");
     },
   });
