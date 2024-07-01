@@ -25,6 +25,7 @@ const LoginPage = () => {
   const { isLoading, login } = useLogin();
   const onSubmit = (data) => {
     if (!data) return;
+
     login(data, {
       onSettled: () => {
         reset();
@@ -88,16 +89,13 @@ const LoginPage = () => {
                   This field is required
                 </span>
               )}
-              {!isLoading ? (
-                <button
-                  className="p-3 bg-blue-600 text-white rounded-md"
-                  type="submit"
-                >
-                  Login
-                </button>
-              ) : (
-                <CircularProgress />
-              )}
+
+              <button
+                className="p-3 bg-blue-600 text-white rounded-md"
+                type="submit"
+              >
+                {isLoading ? <CircularProgress /> : "Login"}
+              </button>
             </form>
           </div>
         </div>
