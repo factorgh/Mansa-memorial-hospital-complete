@@ -35,6 +35,7 @@ function TableContent({ title, patients, expand }) {
             <tr className="w-full">
               <td className="p-3 text-[#004F9E]">#</td>
               <td className="p-3 text-[#004F9E]">Name</td>
+              <td className="p-3 text-[#004F9E]">Purpose</td>
               {isGeneralRole && (
                 <td className="p-3 text-[#004F9E]">Wait time</td>
               )}
@@ -45,6 +46,8 @@ function TableContent({ title, patients, expand }) {
               <tr key={patient._id} className="p-3  border-b border-gray-200">
                 <td className="p-3 ">{index + 1}</td>
                 <td className="p-3 ">{patient.firstName + patient.lastName}</td>
+                <td className="p-3 ">{patient.purpose}</td>
+
                 <td className="p-3 ">00:00:00</td>
               </tr>
             ))}
