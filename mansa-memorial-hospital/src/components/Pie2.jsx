@@ -10,8 +10,8 @@ import {
 const data = [
   { label: "Consulting", value: 400, color: "#747986" },
   { label: "Wound dressing", value: 300, color: "#F78509" },
-  { label: " Outreach", value: 300, color: "#C33333" },
-  { label: "Anti natal", value: 300, color: "#1D1B1B" },
+  { label: "comm. health", value: 300, color: "#C33333" },
+  { label: "Antenatal", value: 300, color: "#1D1B1B" },
 ];
 
 const Pie2 = () => {

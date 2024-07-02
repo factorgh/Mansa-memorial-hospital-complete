@@ -79,9 +79,9 @@ const LoginPage = () => {
                   {...register("password", { required: true })}
                 />
                 {toggleVisibilty ? (
-                  <FaRegEye onClick={handleVisibility} />
-                ) : (
                   <FaRegEyeSlash onClick={handleVisibility} />
+                ) : (
+                  <FaRegEye onClick={handleVisibility} />
                 )}
               </label>
               {errors.password && errors.password.type === "required" && (

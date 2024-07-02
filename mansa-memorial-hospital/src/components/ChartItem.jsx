@@ -60,7 +60,7 @@ const chartConfig = {
           fontWeight: 400,
         },
       },
-      categories: ["WOUND DRESS", "CONSULTING", "ANTI NATAL", "OUTREACH"],
+      categories: ["WOUND DRESS", "CONSULTING", "ANTENATAL", "COMM. HEALTH"],
     },
     yaxis: {
       labels: {

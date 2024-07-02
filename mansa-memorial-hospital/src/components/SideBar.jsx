@@ -169,7 +169,11 @@ const SideBar = () => {
         {isAdmin && !isManager && (
           <button
             onClick={() => {
-              window.location.href = "/patient-display";
+              window.open(
+                "https://mansa.voltican.com/patient-display",
+                "_blank",
+                "noopener,noreferrer"
+              );
             }}
           >
             <motion.li
