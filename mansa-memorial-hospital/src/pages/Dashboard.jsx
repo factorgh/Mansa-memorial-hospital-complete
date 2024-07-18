@@ -47,6 +47,8 @@ const Dashboard = () => {
     },
     [labPatients]
   );
+
+  // Mansa completed
   // Hanlde add lab test
   const totalCount = labData?.reduce((acc) => {
     return acc + 1;
