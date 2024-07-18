@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "dayjs": "^1.11.12",
+    "i": "^0.3.7",
+    "npm": "^10.8.2",
+    "react-countdown": "^2.3.5",
+    "stopwatch-dev": "^1.0.2"
+  }
+}

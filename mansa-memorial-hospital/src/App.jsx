@@ -21,60 +21,60 @@ import DisplayPatients from "./pages/DisplayPatients";
 import { TimerProvider } from "./context/timerContext";
 
 const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5000,
+    defaultOptions: {
+        queries: {
+            staleTime: 5000,
+        },
     },
-  },
 });
 function App() {
-  return (
-    <>
-      <QueryClientProvider client={queryClient}>
-        <TimerProvider>
-          <BrowserRouter>
-            <Routes>
-              <Route path="/*" element={<LoginPage />} />
-              <Route path="/display" element={<DisplayPage />} />
-              <Route path="/patient-display" element={<DisplayPatients />} />
-              <Route element={<BaseTemplate />}>
-                <Route path="/dashboard" element={<Dashboard />} />
-                <Route path="/patients" element={<Patients />} />
-                <Route path="/employees" element={<Employees />} />
-                <Route path="/settings" element={<Settings />} />
-                <Route path="/support" element={<HelpAndSupport />} />
-                <Route path="/lab-tests" element={<LabTests />} />
-                <Route path="/account" element={<Account />} />
-                <Route path="/details" element={<Details />} />
-                <Route exact path="/edit/:id" element={<EditPagePatient />} />
-                <Route path="/edit/user/:id" element={<EditPageUser />} />
-                <Route path="/edit/test/:id" element={<EditPageTest />} />
-                <Route path="/new" element={<NewPatient />} />
-              </Route>
-            </Routes>
-          </BrowserRouter>
-        </TimerProvider>
+    return (
+        <>
+            <QueryClientProvider client={queryClient}>
+                <TimerProvider>
+                    <BrowserRouter>
+                        <Routes>
+                            <Route path="/*" element={<LoginPage />} />
+                            <Route path="/display" element={<DisplayPage />} />
+                            <Route path="/patient-display" element={<DisplayPatients />} />
+                            <Route element={<BaseTemplate />}>
+                                <Route path="/dashboard" element={<Dashboard />} />
+                                <Route path="/patients" element={<Patients />} />
+                                <Route path="/employees" element={<Employees />} />
+                                <Route path="/settings" element={<Settings />} />
+                                <Route path="/support" element={<HelpAndSupport />} />
+                                <Route path="/lab-tests" element={<LabTests />} />
+                                <Route path="/account" element={<Account />} />
+                                <Route path="/details" element={<Details />} />
+                                <Route exact path="/edit/:id" element={<EditPagePatient />} />
+                                <Route path="/edit/user/:id" element={<EditPageUser />} />
+                                <Route path="/edit/test/:id" element={<EditPageTest />} />
+                                <Route path="/new" element={<NewPatient />} />
+                            </Route>
+                        </Routes>
+                    </BrowserRouter>
+                </TimerProvider>
 
-        <Toaster
-          position="top-center"
-          reverseOrder={false}
-          containerStyle={{ marginTop: "20px" }}
-          toastOptions={{
-            success: {
-              duration: 500,
-            },
-            style: {
-              fontSize: "16px",
-              maxWidth: "500px",
-              padding: "16px 24px",
-              backgroundColor: "#FFF",
-              color: "#475833",
-            },
-          }}
-        />
-      </QueryClientProvider>
-    </>
-  );
+                <Toaster
+                    position="top-center"
+                    reverseOrder={false}
+                    containerStyle={{ marginTop: "20px" }}
+                    toastOptions={{
+                        success: {
+                            duration: 500,
+                        },
+                        style: {
+                            fontSize: "16px",
+                            maxWidth: "500px",
+                            padding: "16px 24px",
+                            backgroundColor: "#FFF",
+                            color: "#475833",
+                        },
+                    }}
+                />
+            </QueryClientProvider>
+        </>
+    );
 }
 
 export default App;

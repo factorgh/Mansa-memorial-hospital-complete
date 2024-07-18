@@ -9,13 +9,16 @@ const DisplayPatients = () => {
     const { labPatients } = useGetLabTest();
 
     return (
-        <div className="w-screen h-screen flex   p-3 bg-gray-700">
+        <div className="w-screen h-screen flex  ">
             <DisplayTablePat
                 patients={patientsAll}
                 title="OutPatient "
                 expand=""
                 download={<MdDownload className="text-2xl" />}
             />
+
+            <div className=" h-full w-[10px] bg-black"></div>
+
             <DisplayTableLab
                 labPatients={labPatients}
                 title="Lab Patients"
